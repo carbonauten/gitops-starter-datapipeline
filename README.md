@@ -26,3 +26,7 @@ pip install -r requirements.txt
 pytest -q
 ```
 
+## Consumer deployment
+
+The **datapipeline consumer** (Kafka consumer for control/experiment topics) is deployed via the main [gitops-starter](https://github.com/carbonauten/gitops-starter) repo: Helm chart `gitops/charts/datapipeline-consumer` and Argo CD Application `platform/argocd/datapipeline-consumer-application.yaml`. Producers can use this library’s `resolve_topic()` to publish to the same topic names the consumer subscribes to.
+
